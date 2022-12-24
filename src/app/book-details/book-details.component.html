@@ -1,0 +1,27 @@
+<h2 class="p-3 text-center">Demo - Display a list of items </h2>
+<div class="container" *ngIf="autherDetails">
+    <div>
+        <p><b>Name :</b> {{autherDetails.author}}</p>
+        <p><b>Birthday :</b> {{autherDetails.birthday}}</p>
+        <p><b>Birth Place :</b> {{autherDetails.birthPlace}}</p>
+    </div>
+    <hr>
+</div>
+<div class="button-group">
+    <button (click)="sort('title')" class="btn btn-primary">Sort by Title</button>
+    <button (click)="sort('PublishDate')" class="btn btn-primary">Sort by Year</button>
+</div>
+<div class="main">
+    <div *ngFor="let list of lists; let i = index">
+        <div class="card chip-content">
+            <div class="chip-content">
+                <img class="card-img-top book-icon" src={{list.imageUrl}} alt="Card image">
+                <div class="p15">
+                    <h4 class="card-title"> <a href={{list.purchaseLink}}>{{list.title}}</a></h4>
+                    <p class="card-text">This book was released in the year of <b>{{list.PublishDate}}</b>.</p>
+                </div>
+            </div>
+            <a class="close" (click)="lists.splice(i, 1)">X</a>
+        </div>
+    </div>
+</div>
