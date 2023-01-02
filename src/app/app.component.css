@@ -1,3 +1,27 @@
-.container {
+.bookDets {
+    margin-top: 60px;
     margin-bottom: 60px;
+}
+
+#header {
+    transition: all 0.5s;
+    background: #fff;
+    z-index: 997;
+    padding: 15px 0;
+    border-bottom: 1px solid #e6f2fb;
+    box-shadow: 0px 2px 15px rgb(18 66 101 / 8%);
+}
+
+#header .logo {
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+}
+
+#header .logo a {
+    color: #16507b;
 }

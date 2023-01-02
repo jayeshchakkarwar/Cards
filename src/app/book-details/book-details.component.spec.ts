@@ -35,4 +35,8 @@ describe('BookDetailsComponent', () => {
   it('should call sort', () => {
     expect(component.sort).toBeDefined();
   });
+
+  it('should scroll to top', () => {
+    expect(component.scrollToTop).toBeDefined();
+  });
 });

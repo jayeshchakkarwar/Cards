@@ -1,5 +1,5 @@
 <h2 class="p-3 text-center">Demo - Display a list of items </h2>
-<div class="container" *ngIf="autherDetails">
+<div #container class="container" *ngIf="autherDetails">
     <div>
         <p><b>Name :</b> {{autherDetails.author}}</p>
         <p><b>Birthday :</b> {{autherDetails.birthday}}</p>
@@ -8,8 +8,8 @@
     <hr>
 </div>
 <div class="button-group">
-    <button (click)="sort('title')" class="btn btn-primary">Sort by Title</button>
-    <button (click)="sort('PublishDate')" class="btn btn-primary">Sort by Year</button>
+    <button (click)="sort('title')" class="btn btn-for-sort">Sort by Title</button>
+    <button (click)="sort('PublishDate')" class="btn btn-for-sort">Sort by Year</button>
 </div>
 <div class="main">
     <div *ngFor="let list of lists; let i = index">
@@ -21,7 +21,12 @@
                     <p class="card-text">This book was released in the year of <b>{{list.PublishDate}}</b>.</p>
                 </div>
             </div>
-            <a class="close" (click)="lists.splice(i, 1)">X</a>
+            <a class="close">
+                <span class="closeX" (click)="lists.splice(i, 1)"><i class="fa fa-close"></i></span>
+            </a>
         </div>
     </div>
 </div>
+
+<a *ngIf="isShow" href="#" class="back-to-top d-flex align-items-center justify-content-center"
+    (click)="scrollToTop()"><i class="fa fa-arrow-up"></i></a>
